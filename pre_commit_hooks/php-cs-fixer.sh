@@ -46,8 +46,26 @@ do
     fi
 done;
 
+exec_command="php ${local_command}"
+
+# Check vendor/bin/phpunit
+vendor_command="vendor/bin/phpcs"
+global_command="phpcs"
+if [ -f "${vendor_command}" ]; then
+	exec_command=${vendor_command}
+else
+    if hash phpcs 2>/dev/null; then
+        exec_command=${global_command}
+    else
+        if ! [ -f "${local_command}" ]; then
+            echo "No valid PHPCSFIXER executable found! Please have one available as either ${vendor_command}, ${global_command} or ${local_command}"
+            exit 1
+        fi
+    fi
+fi
+
 # Run the command on each file
-echo -e "${txtgrn}  $exec_command fix${args}${txtrst}"
+echo -e "${txtgrn} ${exec_command} fix ${args} ${txtrst}"
 php_errors_found=false
 error_message=""
 for path in "${files[@]}"
