@@ -48,9 +48,6 @@ done;
 
 exec_command="php ${local_command}"
 
-# Check vendor/bin/phpunit
-vendor_command="vendor/bin/phpcs"
-global_command="phpcs"
 if [ -f "${vendor_command}" ]; then
 	exec_command=${vendor_command}
 else
