@@ -57,8 +57,8 @@ else
 fi
 
 # Run the command with the full list of files
-echo -e "${txtgrn}  $exec_command --no-interaction --ansi${args}${files}${txtrst}"
-OUTPUT="$($exec_command${args}${files})"
+echo -e "${txtgrn} $exec_command --no-interaction --ansi ${args} ${files} ${txtrst}"
+OUTPUT="$($exec_command ${args} ${files})"
 RETURN=$?
 if [ $RETURN -ne 0 ]; then
     echo -en "\n${txtylw}${title} found copied lines in the following files:${txtrst}\n  "

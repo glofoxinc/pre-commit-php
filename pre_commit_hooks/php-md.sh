@@ -60,7 +60,7 @@ else
 fi
 
 # Run the command on each file
-echo -e "${txtgrn}  $exec_command${args}${txtrst}"
+echo -e "${txtgrn} $exec_command ${args} ${txtrst}"
 php_errors_found=false
 error_message=""
 for path in "${files[@]}"
