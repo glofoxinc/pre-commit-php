@@ -1,4 +1,4 @@
-FROM php:7.1
+FROM quay.io/glofox/api:test-latest
 
 MAINTAINER Glofox <glofox@glofox.com>
 
