@@ -17,7 +17,7 @@ fi
 
 branch=`git rev-parse --abbrev-ref HEAD`
 
-if [[ "$branch" =~ $pattern ]]; then
+if ! [[ "$branch" =~ $pattern ]]; then
   echo "Prevented work on $branch."
   echo "If you really want to do this, use --no-verify to bypass this hook."
   exit 1
