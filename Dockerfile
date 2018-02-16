@@ -2,7 +2,8 @@ FROM php:7.1
 
 MAINTAINER Glofox <glofox@glofox.com>
 
-RUN apt-get update
+RUN apt-get update \
+    && apt-get install wget curl -y
 
 RUN wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer.phar  \
     && chmod +x php-cs-fixer.phar \
