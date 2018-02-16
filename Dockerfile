@@ -24,3 +24,5 @@ RUN wget -c http://static.phpmd.org/php/latest/phpmd.phar \
 RUN wget https://phar.phpunit.de/phpcpd.phar \
     && chmod +x phpcpd.phar \
     && mv phpcpd.phar /usr/bin/phpcpd
+
+COPY ./pre_commit_hooks /pre_commit_hooks
