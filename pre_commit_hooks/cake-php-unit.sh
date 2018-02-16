@@ -2,4 +2,4 @@
 
 cd /src
 
-docker exec $1 Console\cake test app $2
+docker exec $1 ./Console/cake test app $2
