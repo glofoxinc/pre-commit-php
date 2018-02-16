@@ -74,14 +74,14 @@ do
         php_errors_found=true
     elif [ $RETURN -eq 2 ]; then
         # Return 2 means it ran successfully, but found issues.
-        error_message+="  - ${txtylw}${path}${txtrst}"
+        error_message+="  - ${txtylw}${path}${txtrst}\n\n"
         error_message+="$OUTPUT\n\n"
         php_errors_found=true
     fi
 done;
 
 if [ "$php_errors_found" = true ]; then
-    echo -en "\n${txtylw}${title} found issues in the following files:${txtrst}\n\n"
+    echo -en "\n${txtylw}${title} found issues in the following files:${txtrst}\n"
     echo -en "${error_message}"
     echo -en "${bldred}Please review and commit.${txtrst}\n"
     exit 1
