@@ -61,3 +61,9 @@
   entry: pre_commit_hooks/only-branch-pushes.sh
   language: script
   files: ''
+
+- id: cake-php-unit
+  name: CakePHP Unit Tests
+  entry: pre_commit_hooks/cake-php-unit.sh
+  language: script
+  files: ''
