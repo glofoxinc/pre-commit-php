@@ -54,3 +54,10 @@
   entry: /pre_commit_hooks/php-cpd.sh
   language: docker
   files: \.php$
+
+- id: only-branch-pushes
+  name: only branch pushes
+  description: prevent pushes to a list of forbidden branches
+  entry: pre_commit_hooks/only-branch-pushes.sh
+  language: script
+  files: ''
