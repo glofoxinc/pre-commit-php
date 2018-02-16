@@ -5,7 +5,7 @@ MAINTAINER Glofox <glofox@glofox.com>
 RUN apt-get update \
     && apt-get install wget curl git python-pip  -y
 
-RUN wget http://cs.sensiolabs.org/downloagd/php-cs-fixer-v2.phar -O php-cs-fixer.phar  \
+RUN wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer.phar  \
     && chmod +x php-cs-fixer.phar \
     && mv php-cs-fixer.phar /usr/bin/php-cs-fixer
 
