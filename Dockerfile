@@ -1,4 +1,4 @@
-FROM quay.io/glofox/php:7-apache
+FROM php:7.1
 
 MAINTAINER Glofox <glofox@glofox.com>
 
