@@ -41,6 +41,21 @@ do
     fi
 done;
 
+exec_command="php ${local_command}"
+
+if [ -f "${vendor_command}" ]; then
+	exec_command=${vendor_command}
+else
+    if hash phpcs 2>/dev/null; then
+        exec_command=${global_command}
+    else
+        if ! [ -f "${local_command}" ]; then
+            echo "No valid PHPCPD executable found! Please have one available as either ${vendor_command}, ${global_command} or ${local_command}"
+            exit 1
+        fi
+    fi
+fi
+
 # Run the command with the full list of files
 echo -e "${txtgrn}  $exec_command --no-interaction --ansi${args}${files}${txtrst}"
 OUTPUT="$($exec_command${args}${files})"
